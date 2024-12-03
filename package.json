@@ -1,0 +1,40 @@
+{
+  "name": "openapi-http-client-generator",
+  "version": "1.0.0",
+  "description": "A tool to generate a TypeScript HTTP client from an OpenAPI (Swagger) specification using swagger-typescript-api.",
+  "author": "Pavel Rapoport",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paveliko/openapi-http-client-generator.git"
+  },
+  "homepage": "https://github.com/paveliko/openapi-http-client-generator#readme",
+  "bugs": {
+    "url": "https://github.com/paveliko/openapi-http-client-generator/issues"
+  },
+  "scripts": {
+    "generate:api": "swagger-typescript-api -p ./src/swagger.json -o ./src/api -n Api.ts --axios --modular",
+    "prepublishOnly": "npm run generate:api"
+  },
+  "keywords": [
+    "openapi",
+    "swagger",
+    "typescript",
+    "api-client",
+    "swagger-typescript-api",
+    "http-client",
+    "generator",
+    "axios"
+  ],
+  "dependencies": {
+    "swagger-typescript-api": "^13.0.23"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "ts-node": "^10.0.0",
+    "@types/node": "^16.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
